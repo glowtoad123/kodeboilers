@@ -15,6 +15,7 @@ import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/css/css'
 import {Controlled as CodeMirror} from 'react-codemirror2'
 import Enter from './enter'
+import Create from './create'
 
 function App() {
 
@@ -25,23 +26,9 @@ function App() {
       <Router>
         <div className="App">
           <Nav />
-          <CodeMirror
-            onBeforeChange={(editor, data, value) => {
-              setCodeText(value);
-            }}
-            className="editor"
-            value={codeText}
-            options={{
-              theme: 'material',
-              lineNumbers: true,
-              mode: 'javascript'
-            }}
-            onChange={(editor, data, value) => {
-              setCodeText(value);
-            }}
-          />
           <Switch>
             <Route path="/enter" component={Enter} />
+            <Route path="/create" component={Create} />
           </Switch>
         </div>
       </Router>

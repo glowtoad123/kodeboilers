@@ -53,6 +53,40 @@ svg:active {
   color:  #ee2222
 }
 
+.userPerson {
+  background-color: #060621;
+  color: white;
+  margin-bottom: 0;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  border: none;
+  border-radius: 12px 12px 0 0;
+}
+
 .editor {
   text-align: left;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  margin-bottom: 0;
+  border: none;
+}
+
+::-webkit-scrollbar {
+  background-color: #263238;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f06262;
+}
+
+.addCode {
+  background-color:#627b88;
+  color: white;
+  margin-bottom: 0;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  border: none;
+  border-radius: 0 0 12px 12px;
+  margin-top: 0;
+  padding: 10px;
 }
