@@ -16,6 +16,7 @@ import 'codemirror/mode/css/css'
 import {Controlled as CodeMirror} from 'react-codemirror2'
 import Enter from './enter'
 import Create from './create'
+import Collection from './components/collection';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <div className="App">
           <Nav />
           <Switch>
+            <Route exact path="/" component={Collection} />
             <Route path="/enter" component={Enter} />
             <Route path="/create" component={Create} />
           </Switch>

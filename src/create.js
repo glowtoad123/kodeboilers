@@ -6,18 +6,27 @@ import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/css/css'
 import {Controlled as CodeMirror} from 'react-codemirror2'
 import {useFire} from './services/fire'
+import { useHistory } from 'react-router-dom'
 
 export default function Create() {
 
     const [codeText, setCodeText] = useState("testing")
+    const [title, setTitle] = useState("")
 
-    const {currentUser} = useFire()
+    const {currentUser, submitBroiler} = useFire()
     
-    console.log(currentUser.email)
+    console.log(currentUser)
+
+    const history = useHistory()
+
+    function addBroiler(){
+        submitBroiler(title, codeText, currentUser.uid)
+        history.push("/")
+    }
 
     return (
         <div style={{width: '95%', margin: 'auto'}}>
-            <h1 className="userPerson">{currentUser.email}</h1>
+            <input type="text" className="title" value={title} onChange={event => setTitle(event.target.value)} placeholder="Please name this broiler"/>
             <CodeMirror
                 onBeforeChange={(editor, data, value) => {
                   setCodeText(value);
@@ -33,7 +42,7 @@ export default function Create() {
                   setCodeText(value);
                 }}
             />
-            <button type="submit" className="addCode">Add Code</button>
+            <button type="submit" className="addCode" onClick={addBroiler}>Add Broiler</button>
         </div>
     )
 }

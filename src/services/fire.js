@@ -1,4 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react'
+import firebase from 'firebase'
+import 'firebase/firestore'
 import {auth} from './auth'
 
 const FireContext = React.createContext() 
@@ -27,6 +29,22 @@ export function Fire({ children }) {
       return auth.signOut()
     }
 
+    function submitBroiler(title, code, uid){
+      const db = firebase.firestore()
+
+      db.collection("broilers").add({
+        title: title,
+        code: code,
+        user: uid
+      })
+    }
+
+    function displayBroilers(){
+      const db = firebase.firestore()
+
+      db.collection("broilers").where("user", '==', currentUser.uid)
+    }
+
     useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged(user => {
           setCurrentUser(user)
@@ -35,13 +53,13 @@ export function Fire({ children }) {
 
       return unsubscribe
     }, [])
-
-    !currentUser && window.location.assign("/enter")
     
     const options = {
       checkAccount,
       submitAccount,
       logout,
+      submitBroiler,
+      displayBroilers,
       currentUser
     }
 
