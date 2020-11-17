@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+svg {
+  color: #f06262;
+  width: 32px;
+  height: 32px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+svg:hover {
+  color:  #eb4242
+}
+
+svg:active {
+  color:  #ee2222
+}
+
+.editor {
+  text-align: left;
+}

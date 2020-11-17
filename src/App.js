@@ -1,24 +1,51 @@
+import React, {useState} from 'react'
 import logo from './logo.svg';
 import './App.css';
+import Nav from './components/nav'
+import {Fire} from './services/fire'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from "react-router-dom"
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/material.css'
+import 'codemirror/mode/xml/xml'
+import 'codemirror/mode/javascript/javascript'
+import 'codemirror/mode/css/css'
+import {Controlled as CodeMirror} from 'react-codemirror2'
+import Enter from './enter'
 
 function App() {
+
+  const [codeText, setCodeText] = useState("testing")
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fire>
+      <Router>
+        <div className="App">
+          <Nav />
+          <CodeMirror
+            onBeforeChange={(editor, data, value) => {
+              setCodeText(value);
+            }}
+            className="editor"
+            value={codeText}
+            options={{
+              theme: 'material',
+              lineNumbers: true,
+              mode: 'javascript'
+            }}
+            onChange={(editor, data, value) => {
+              setCodeText(value);
+            }}
+          />
+          <Switch>
+            <Route path="/enter" component={Enter} />
+          </Switch>
+        </div>
+      </Router>
+    </Fire>
   );
 }
 
