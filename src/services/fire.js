@@ -51,6 +51,15 @@ export function Fire({ children }) {
       return db.collection('broilers').doc(id).get()
     }
 
+    function updateBroiler(id, title, code) {
+      const db = firebase.firestore()
+
+      return db.collection('broilers').doc(id).update({
+        title: title,
+        code: code
+      }).then(() => console.log("it works")).catch(err => console.log(err))
+    }
+
     useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged(user => {
           setCurrentUser(user)
@@ -67,6 +76,7 @@ export function Fire({ children }) {
       submitBroiler,
       displayBroilers,
       findBroiler,
+      updateBroiler,
       currentUser
     }
 

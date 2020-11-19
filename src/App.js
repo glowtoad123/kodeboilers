@@ -18,6 +18,7 @@ import Enter from './enter'
 import Create from './create'
 import Collection from './components/collection';
 import Broiler from './components/broiler'
+import Edit from './components/edit'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
           <Nav />
           <Switch>
             <Route path="/broiler/:id" component={Broiler} />
+            <Route path="/edit/:id" component={Edit} />
             <Route exact path="/" component={Collection} />
             <Route path="/enter" component={Enter} />
             <Route path="/create" component={Create} />
