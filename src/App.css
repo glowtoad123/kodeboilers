@@ -92,3 +92,55 @@ svg:active {
   margin-top: 0;
   padding: 10px;
 }
+
+.displayedBroiler {
+  width: 25%;
+  background-color: #182024;
+  color: white;
+  border: none;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 50px 10px 10px 10px;
+  display: inline-block;
+}
+
+.displayedBroiler:hover {
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.25);
+}
+
+.displayedBroilerTitle {
+  background-color: #20261F;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.edit {
+  padding: 5px;
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .displayedBroiler {
+    width: 95%;
+    background-color: #3C473A;
+    color: white;
+    border: none;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 50px 10px 10px 10px;
+    display: inline-block;
+  }
+  
+  .displayedBroiler:hover {
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.25);
+  }
+  
+  .displayedBroilerTitle {
+    background-color: #20261F;
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}

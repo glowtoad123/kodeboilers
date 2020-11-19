@@ -42,7 +42,7 @@ export function Fire({ children }) {
     function displayBroilers(){
       const db = firebase.firestore()
 
-      db.collection("broilers").where("user", '==', currentUser.uid)
+      return db.collection("broilers").where("user", '==', currentUser.uid)
     }
 
     useEffect(() => {
