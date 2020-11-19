@@ -60,6 +60,12 @@ export function Fire({ children }) {
       }).then(() => console.log("it works")).catch(err => console.log(err))
     }
 
+    function deleteBroiler(id){
+      const db = firebase.firestore()
+
+      return db.collection('broilers').doc(id).delete().then(() => console.log("it works")).catch(err => console.log(err))
+    }
+
     useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged(user => {
           setCurrentUser(user)
@@ -77,6 +83,7 @@ export function Fire({ children }) {
       displayBroilers,
       findBroiler,
       updateBroiler,
+      deleteBroiler,
       currentUser
     }
 
