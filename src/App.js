@@ -17,6 +17,7 @@ import {Controlled as CodeMirror} from 'react-codemirror2'
 import Enter from './enter'
 import Create from './create'
 import Collection from './components/collection';
+import Broiler from './components/broiler'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <div className="App">
           <Nav />
           <Switch>
+            <Route path="/broiler/:id" component={Broiler} />
             <Route exact path="/" component={Collection} />
             <Route path="/enter" component={Enter} />
             <Route path="/create" component={Create} />

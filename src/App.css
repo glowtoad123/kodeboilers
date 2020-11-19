@@ -81,6 +81,14 @@ svg:active {
   background-color: #f06262;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background-color: #eb4b4b;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #ec3838;
+}
+
 .addCode {
   background-color:#627b88;
   color: white;
@@ -95,7 +103,7 @@ svg:active {
 
 .displayedBroiler {
   width: 25%;
-  background-color: #182024;
+  background-color:#263238;
   color: white;
   border: none;
   border-radius: 12px 12px 0 0;
@@ -115,6 +123,19 @@ svg:active {
   margin-top: 0;
 }
 
+.displayedBroilerTitle:hover {
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.25);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.25);
+}
+
 .edit {
   padding: 5px;
   width: 24px;
@@ -124,7 +145,7 @@ svg:active {
 @media screen and (max-width: 1024px) {
   .displayedBroiler {
     width: 95%;
-    background-color: #3C473A;
+    background-color:#263238;
     color: white;
     border: none;
     border-radius: 12px 12px 0 0;

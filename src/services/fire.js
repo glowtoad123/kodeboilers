@@ -45,6 +45,12 @@ export function Fire({ children }) {
       return db.collection("broilers").where("user", '==', currentUser.uid)
     }
 
+    function findBroiler(id) {
+      const db = firebase.firestore()
+
+      return db.collection('broilers').doc(id).get()
+    }
+
     useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged(user => {
           setCurrentUser(user)
@@ -60,6 +66,7 @@ export function Fire({ children }) {
       logout,
       submitBroiler,
       displayBroilers,
+      findBroiler,
       currentUser
     }
 
