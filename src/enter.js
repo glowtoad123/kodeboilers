@@ -4,6 +4,7 @@ import Login from "./components/login";
 import Register from "./components/register"
 import {auth} from './services/auth'
 import * as theFire from './services/fire'
+import { useHistory } from 'react-router-dom';
 
 export default function Enter(){
 
@@ -12,9 +13,17 @@ export default function Enter(){
     const emailRef = useRef()
     const passwordRef = useRef()
 
-    const { checkAccount, submitAccount, currentUser } = theFire.useAuthen()
+    const history = useHistory()
 
-    console.log(currentUser)
+    const { checkAccount, submitAccount, currentUser, logout, loggedinCondition} = theFire.useAuthen()
+
+        loggedinCondition && logout()
+
+        console.log("the condition: " + loggedinCondition)
+        console.log(account);
+        console.log(currentUser);
+
+
 
 
 
@@ -22,7 +31,6 @@ export default function Enter(){
         var name = event.target.name
         var value = event.target.value
         setAccount(current => ({...current, [name]: value}))
-        console.log(account)
     }
 
     async function readingAccount(event){
@@ -30,6 +38,7 @@ export default function Enter(){
 
         try {
             await checkAccount(account.email, account.password)
+            await history.push("/")
         } catch {
             alert("wrong")
         }
@@ -40,6 +49,7 @@ export default function Enter(){
 
         try {
             await submitAccount(account.email, account.password)
+            await history.push("/")
         } catch(error) {
             console.log(error)
         }
@@ -95,13 +105,14 @@ export default function Enter(){
                 username={account.username}
             /> */}
 
-<Login 
+            <Login 
                 typing={readingProgress} 
                 authenticate={readingAccount}
                 password={account.password}
                 email={account.email}
                 em={emailRef}
                 pass={passwordRef}
+                loading={logout}
             />
             <Register 
                 typing={readingProgress} 
@@ -111,6 +122,7 @@ export default function Enter(){
                 em={emailRef}
                 pass={passwordRef}
                 username={account.username}
+                loading={logout}
             />
         </Fire>
     )

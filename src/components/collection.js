@@ -7,20 +7,22 @@ import 'codemirror/mode/css/css'
 import {Controlled as CodeMirror} from 'react-codemirror2'
 import {useFire} from '../services/fire'
 
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 
 export default function Collection() {
     const [broilers, setBroilers] = useState([])
     const [broilerIdList, setBroilerIdList] = useState([])
-    const {displayBroilers, deleteBroiler} = useFire()
+    const [receivedCheck, setReceivedCheck] = useState(false)
+    const {displayBroilers, deleteBroiler, loggedinCondition} = useFire()
 
-    broilers && broilers.length === 0 && displayBroilers().onSnapshot(data => {
+        !receivedCheck && displayBroilers().onSnapshot(data => {
         setBroilers(
             data.docs.map(doc => doc.data())
             );
         setBroilerIdList(
             data.docs.map(doc => doc.id)
         )
+        setReceivedCheck(true)
         })
 
     console.log(broilers)

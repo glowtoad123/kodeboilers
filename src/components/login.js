@@ -6,7 +6,7 @@ export default function Login(props){
     return(
         <Fire>
 
-        <div className="signbox">
+        <div className="signbox" onLoad={() => props.loading}>
             <input 
                 onChange={props.typing}
                 value={props.email}
