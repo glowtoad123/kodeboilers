@@ -30,11 +30,8 @@ export function Fire({ children }) {
     }
 
      function logout(){
-       setLoggedinCondition(false)
-      return auth.signOut()/* .then(() => {
-        setLoggedinCondition(false)
-        console.log("successfully logged out")
-      }).catch(err => console.log(err)) */
+       window.location.assign("/enter")
+       return auth.signOut()
     }
 
     function submitBroiler(title, code, uid){

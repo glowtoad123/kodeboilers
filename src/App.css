@@ -165,3 +165,10 @@ a:hover {
     margin-top: 0;
   }
 }
+
+#getStarted {
+  background-color:#060621;
+  color: white;
+  margin: auto;
+  margin-top: 40px;
+}

@@ -8,12 +8,13 @@ import {Controlled as CodeMirror} from 'react-codemirror2'
 import {useFire} from '../services/fire'
 
 import {Link, useHistory} from 'react-router-dom'
+import { CircularProgress, LinearProgress } from '@material-ui/core'
 
 export default function Collection() {
     const [broilers, setBroilers] = useState([])
     const [broilerIdList, setBroilerIdList] = useState([])
     const [receivedCheck, setReceivedCheck] = useState(false)
-    const {displayBroilers, deleteBroiler, loggedinCondition} = useFire()
+    const {displayBroilers, deleteBroiler, loggedinCondition, logout, currentUser} = useFire()
 
         !receivedCheck && displayBroilers().onSnapshot(data => {
         setBroilers(
@@ -43,7 +44,9 @@ export default function Collection() {
 
     return (
         <div className="collection">
-            {broilers && broilers.length > 0 && broilers.map((broiler, index) => { return (
+            <br />
+            <br />
+            {broilers && broilers.length > 0 ? broilers.map((broiler, index) => { return (
                 <div className='displayedBroiler'>
                     <Link to={`/broiler/${broilerIdList[index]}`}>
                         <h1 className='displayedBroilerTitle'>
@@ -69,6 +72,34 @@ export default function Collection() {
                     </svg>
                 </div>
             )})
+            : broilers.length == 0 && !currentUser ?
+                <div>
+                    <br />
+                    <br />
+                    <br />
+                    <h1 id="getStarted" style={{width: '80%'}}>
+                        Have no Broilers? Press the   
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-door-closed-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4 1a1 1 0 0 0-1 1v13H1.5a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2a1 1 0 0 0-1-1H4zm2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                        </svg> Icon Sign in/Register. If You are SignedIn press the                 
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                        </svg> 
+                        Icon to create a broiler
+                    </h1>
+                </div>
+            :
+                <>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <LinearProgress color="primary" />
+                </>
             }
         </div>
     )

@@ -5,7 +5,7 @@ export default function Register(props){
     return(
         <Fire>
 
-        <div className="signbox" onLoad={() => props.loading}>
+        <div className="signbox">
             <input 
                 onChange={props.typing}
                 value={props.email}

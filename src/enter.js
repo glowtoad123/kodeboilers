@@ -17,7 +17,6 @@ export default function Enter(){
 
     const { checkAccount, submitAccount, currentUser, logout, loggedinCondition} = theFire.useAuthen()
 
-        loggedinCondition && logout()
 
         console.log("the condition: " + loggedinCondition)
         console.log(account);

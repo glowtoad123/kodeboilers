@@ -22,7 +22,6 @@ export default function Nav(){
     async function handleLogout(){
         try {
             await logout()
-            history.push('/enter')
         } catch(err) {
             console.log(err)
         }
