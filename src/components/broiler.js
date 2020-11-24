@@ -26,7 +26,7 @@ export default function Broiler() {
 
     function removeBroiler(){
         var confirmDelete = window.confirm("Are you sure you want to delete this Broiler?");
-        if(confirmDelete == true) { 
+        if(confirmDelete === true) { 
             deleteBroiler(id)
             history.push('/')
         } else {
