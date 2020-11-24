@@ -31,13 +31,13 @@ export default function Account() {
             {
                 password === confirmPassword ? <h1 style={{backgroundColor: "green", color: "white"}}>Passwords match</h1> : <h1 style={{backgroundColor: "red", color: "white"}}>passwords do not match</h1>
             }
-            {currentUser && <div className="signbox">
+            {email && email !== "" && <div className="signbox">
                 <input className="signfield" type="email" value={email} placeholder="email" onChange={event => setEmail(event.target.value)}/>
                 <input className="signfield" type="password" value={password} placeholder="password" onChange={event => setPassword(event.target.value)}/>
                 {password && password !== "" && <input className="signfield" type="password" value={confirmPassword} placeholder="Confirm password" onChange={event => setConfirmPassword(event.target.value)}/>}
                 <button className="submit" type="submit" onClick={UpdateAccount}>Update Account</button>
             </div>}
-            {!currentUser && <h1 style={{
+            {email && email === "" && <h1 style={{
                 backgroundColor: "#060621",
                 color: 'white',
                 width: 'max-context',
