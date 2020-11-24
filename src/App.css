@@ -172,3 +172,20 @@ a:hover {
   margin: auto;
   margin-top: 40px;
 }
+
+#denied {
+  background-color:#060621;
+  color: white;
+  margin: auto;
+  margin-top: 40px;
+}
+
+#fp {
+  width: max-content;
+  background-color: #2F3E46;
+  margin: auto;
+  padding: 10px;
+  margin-bottom: 50px;
+  border: none;
+  border-radius: 12px;
+}

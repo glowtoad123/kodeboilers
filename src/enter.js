@@ -4,7 +4,7 @@ import Login from "./components/login";
 import Register from "./components/register"
 import {auth} from './services/auth'
 import * as theFire from './services/fire'
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 export default function Enter(){
 
@@ -113,6 +113,7 @@ export default function Enter(){
                 pass={passwordRef}
                 loading={logout}
             />
+            <Link to="/forgot"><h2 id="fp">Forgot Password?</h2></Link>
             <Register 
                 typing={readingProgress} 
                 authenticate={addingAccount}

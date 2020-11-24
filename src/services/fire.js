@@ -77,6 +77,10 @@ export function Fire({ children }) {
       return db.collection('broilers').doc(id).delete().then(() => console.log("it works")).catch(err => console.log(err))
     }
 
+    function resetPassword(email){
+      return auth.sendPasswordResetEmail(email)
+    }
+
     useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged(user => {
 
@@ -98,6 +102,7 @@ export function Fire({ children }) {
       findBroiler,
       updateBroiler,
       deleteBroiler,
+      resetPassword,
       currentUser,
       loggedinCondition
     }
