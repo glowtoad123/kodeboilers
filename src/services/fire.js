@@ -2,7 +2,6 @@ import React, {useContext, useState, useEffect} from 'react'
 import firebase from 'firebase'
 import 'firebase/firestore'
 import {auth} from './auth'
-import { useHistory } from 'react-router-dom'
 
 const FireContext = React.createContext() 
 
@@ -17,9 +16,6 @@ export function useAuthen() {
 export function Fire({ children }) {
     const [currentUser, setCurrentUser] = useState()
     const [loading, setLoading] = useState(true)
-    const [loggedinCondition, setLoggedinCondition] = useState(true)
-
-    const history = useHistory()
 
     function checkAccount(email, password){
       return auth.signInWithEmailAndPassword(email, password)
@@ -46,15 +42,12 @@ export function Fire({ children }) {
 
     function displayBroilers(){
       const db = firebase.firestore()
-      setLoggedinCondition(true)
       if(currentUser){
         return db.collection("broilers").where("user", '==', currentUser.uid)
       } else {
         return db.collection("broilers").where("user", '==', '')
       }
     }
-
-    console.log(loggedinCondition)
 
     function findBroiler(id) {
       const db = firebase.firestore()
@@ -126,7 +119,6 @@ export function Fire({ children }) {
       updateEmail,
       updatePassword,
       currentUser,
-      loggedinCondition
     }
 
 

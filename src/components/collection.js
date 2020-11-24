@@ -7,14 +7,14 @@ import 'codemirror/mode/css/css'
 import {Controlled as CodeMirror} from 'react-codemirror2'
 import {useFire} from '../services/fire'
 
-import {Link, useHistory} from 'react-router-dom'
-import { CircularProgress, LinearProgress } from '@material-ui/core'
+import {Link} from 'react-router-dom'
+import {LinearProgress } from '@material-ui/core'
 
 export default function Collection() {
     const [broilers, setBroilers] = useState([])
     const [broilerIdList, setBroilerIdList] = useState([])
     const [receivedCheck, setReceivedCheck] = useState(false)
-    const {displayBroilers, deleteBroiler, loggedinCondition, logout, currentUser} = useFire()
+    const {displayBroilers, deleteBroiler, currentUser} = useFire()
 
         !receivedCheck && displayBroilers().onSnapshot(data => {
         setBroilers(
@@ -33,7 +33,7 @@ export default function Collection() {
 
     function removeBroiler(broilerId){
         var confirmDelete = window.confirm("Are you sure you want to delete this Broiler?");
-        if(confirmDelete == true) { 
+        if(confirmDelete === true) { 
             deleteBroiler(broilerId)
         } else {
             alert("Broiler has not been deleted")
@@ -72,7 +72,7 @@ export default function Collection() {
                     </svg>
                 </div>
             )})
-            : broilers.length == 0 && !currentUser ?
+            : broilers.length === 0 && !currentUser ?
                 <div>
                     <br />
                     <br />

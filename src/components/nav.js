@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, useHistory} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {useFire} from '../services/fire'
 
 export default function Nav(){
@@ -14,8 +14,6 @@ export default function Nav(){
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         zIndex: '3',
     }
-
-    const history = useHistory()
 
     const {logout} = useFire()
 

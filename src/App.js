@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
 import Nav from './components/nav'
 import {Fire} from './services/fire'
@@ -8,12 +7,6 @@ import {
   Route,
   Switch
 } from "react-router-dom"
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/theme/material.css'
-import 'codemirror/mode/xml/xml'
-import 'codemirror/mode/javascript/javascript'
-import 'codemirror/mode/css/css'
-import {Controlled as CodeMirror} from 'react-codemirror2'
 import Enter from './enter'
 import Create from './create'
 import Collection from './components/collection';
@@ -23,8 +16,6 @@ import Forgot from './components/forgot';
 import Account from './components/account';
 
 function App() {
-
-  const [codeText, setCodeText] = useState("testing")
 
   return (
     <Fire>

@@ -1,8 +1,7 @@
-import React, {useState, useEffect, useContext, createContext, useRef} from 'react'
+import React, {useState, useRef} from 'react'
 import {Fire} from './services/fire'
 import Login from "./components/login";
 import Register from "./components/register"
-import {auth} from './services/auth'
 import * as theFire from './services/fire'
 import { useHistory, Link } from 'react-router-dom';
 
@@ -15,10 +14,7 @@ export default function Enter(){
 
     const history = useHistory()
 
-    const { checkAccount, submitAccount, currentUser, logout, loggedinCondition} = theFire.useAuthen()
-
-
-        console.log("the condition: " + loggedinCondition)
+    const { checkAccount, submitAccount, currentUser, logout} = theFire.useAuthen()
         console.log(account);
         console.log(currentUser);
 
