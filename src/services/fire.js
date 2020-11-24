@@ -81,6 +81,26 @@ export function Fire({ children }) {
       return auth.sendPasswordResetEmail(email)
     }
 
+    function updateEmail(email){
+      return currentUser.updateEmail(email).then(() => 
+        window.alert("email has been updated to: " + email)
+      ).catch(() => 
+        window.alert("there was an error; probably a network error")
+      ).finally(() => 
+        console.log("finished")
+      )
+    }
+
+    function updatePassword(password){
+      return currentUser.updatePassword(password).then(() => 
+        window.alert("password has been updated to: " + password)
+      ).catch(() => 
+        window.alert("password did not update because 'password and confirm password does not match'")
+      ).finally(() => 
+        console.log("finished")
+      )
+    }
+
     useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged(user => {
 
@@ -103,6 +123,8 @@ export function Fire({ children }) {
       updateBroiler,
       deleteBroiler,
       resetPassword,
+      updateEmail,
+      updatePassword,
       currentUser,
       loggedinCondition
     }

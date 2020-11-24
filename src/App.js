@@ -20,6 +20,7 @@ import Collection from './components/collection';
 import Broiler from './components/broiler'
 import Edit from './components/edit'
 import Forgot from './components/forgot';
+import Account from './components/account';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
             <Route path="/enter" component={Enter} />
             <Route path="/create" component={Create} />
             <Route path="/forgot" component={Forgot} />
+            <Route path="/account" component={Account} />
           </Switch>
         </div>
       </Router>
