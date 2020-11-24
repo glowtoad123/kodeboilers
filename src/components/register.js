@@ -15,13 +15,6 @@ export default function Register(props){
                 placeholder="email" 
                 className="signfield"
             />
-            <input 
-                onChange={props.typing}
-                value={props.username}   
-                name="username" 
-                placeholder="username" 
-                className="signfield"
-            />
             <input
                 onChange={props.typing} 
                 value={props.password}    
