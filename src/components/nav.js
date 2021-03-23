@@ -26,7 +26,7 @@ export default function Nav(){
         marginTop: "15px",
         marginBottom: "15px"
     }
-
+//test
     useEffect(() => {
       SetPageWidth(window.innerWidth)
 })
