@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {useFire} from '../services/fire'
 
 export default function Nav(){
     
     const {logout, currentUser} = useFire()
+    const [pageWidth, setPageWidth] = useState("1050px")
 
     const navStyle = {
         backgroundColor: '#060621',
@@ -25,6 +26,12 @@ export default function Nav(){
         marginTop: "15px",
         marginBottom: "15px"
     }
+
+    useEffect(() => {
+      SetPageWidth(window.innerWidth)
+})
+
+    pageWidth <= 1024px && (navStyle.right = "0px", navStyle.top = "0px", navStyle.bottom = "0")
 
     async function handleLogout(){
         try {
