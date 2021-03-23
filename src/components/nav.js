@@ -2,10 +2,13 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {useFire} from '../services/fire'
 
+const theWidth = window.innerWidth
+
+
 export default function Nav(){
     
     const {logout, currentUser} = useFire()
-    const [pageWidth, setPageWidth] = useState(1050)
+    const [pageWidth, setPageWidth] = useState(750)
 
     const navStyle = {
         backgroundColor: '#060621',
@@ -13,12 +16,14 @@ export default function Nav(){
         border: 'none',
         borderRadius: '12px',
         position: 'fixed',
-        top: !currentUser ? '35%' : '20%',
-        right: '5px',
+        top: !currentUser ? '35%' : window.innerWidth < 750 ? "auto" : '20%',
+        right: window.innerWidth < 750 ? 'auto' : '5px',
+        left: window.innerWidth < 750 && '30%',
+        bottom: window.innerWidth < 750 ? '0' : 'auto',
         boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.25)',
         zIndex: '3',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: window.innerWidth < 750 ? 'row' : "column",
     }
 
     const navButtonStyle = {
@@ -27,17 +32,25 @@ export default function Nav(){
         marginBottom: "15px"
     }
 //test
-    useEffect(() => {
-      setPageWidth(window.innerWidth)
-}, [pageWidth])
 
-    if (pageWidth <= 1024) { 
+    console.log("theWidth", theWidth)
+      
+
+    /* if (window.innerWidth < 750) { 
       navStyle.right = "auto"; 
       navStyle.top = "auto"; 
       navStyle.bottom = "0";
       navStyle.flexDirection = "row";
       navStyle.margin = "auto"
-}
+    } else {
+      navStyle.right = '5px'; 
+      navStyle.top = !currentUser ? '35%' : '20%'; 
+      navStyle.bottom = "auto";
+      navStyle.flexDirection = "column";
+      navStyle.margin = "auto"
+    } */
+
+console.log("pageWidth", window.innerWidth)
 
     async function handleLogout(){
         try {
@@ -48,7 +61,7 @@ export default function Nav(){
     }
 
     return(
-        <nav style={navStyle}>
+        <nav onClick={() => console.log("window.innerWidth", window.innerWidth)} style={navStyle}>
             <Link to="/">
                 <svg style={navButtonStyle} width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
