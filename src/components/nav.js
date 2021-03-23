@@ -28,7 +28,7 @@ export default function Nav(){
     }
 //test
     useEffect(() => {
-      SetPageWidth(window.innerWidth)
+      setPageWidth(window.innerWidth)
 })
 
     pageWidth <= 1024 && (navStyle.right = "0px", navStyle.top = "0px", navStyle.bottom = "0")
