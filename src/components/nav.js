@@ -31,7 +31,12 @@ export default function Nav(){
       setPageWidth(window.innerWidth)
 }, [pageWidth])
 
-    if (pageWidth <= 1024) { navStyle.right = "auto"; navStyle.top = "auto"; navStyle.bottom = "0" }
+    if (pageWidth <= 1024) { 
+      navStyle.right = "auto"; 
+      navStyle.top = "auto"; 
+      navStyle.bottom = "0";
+      navStyle.flexDirection = "row";
+}
 
     async function handleLogout(){
         try {
