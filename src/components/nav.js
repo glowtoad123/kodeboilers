@@ -36,6 +36,7 @@ export default function Nav(){
       navStyle.top = "auto"; 
       navStyle.bottom = "0";
       navStyle.flexDirection = "row";
+      navStyle.margin = "auto"
 }
 
     async function handleLogout(){
