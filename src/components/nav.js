@@ -5,7 +5,7 @@ import {useFire} from '../services/fire'
 export default function Nav(){
     
     const {logout, currentUser} = useFire()
-    const [pageWidth, setPageWidth] = useState("1050px")
+    const [pageWidth, setPageWidth] = useState(1050)
 
     const navStyle = {
         backgroundColor: '#060621',
@@ -31,7 +31,7 @@ export default function Nav(){
       SetPageWidth(window.innerWidth)
 })
 
-    pageWidth <= "1024px" && (navStyle.right = "0px", navStyle.top = "0px", navStyle.bottom = "0")
+    pageWidth <= 1024 && (navStyle.right = "0px", navStyle.top = "0px", navStyle.bottom = "0")
 
     async function handleLogout(){
         try {
