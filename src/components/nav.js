@@ -31,7 +31,7 @@ export default function Nav(){
       SetPageWidth(window.innerWidth)
 })
 
-    pageWidth <= 1024px && (navStyle.right = "0px", navStyle.top = "0px", navStyle.bottom = "0")
+    pageWidth <= "1024px" && (navStyle.right = "0px", navStyle.top = "0px", navStyle.bottom = "0")
 
     async function handleLogout(){
         try {
