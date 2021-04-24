@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 import {useFire} from '../services/fire'
 
@@ -8,7 +8,6 @@ const theWidth = window.innerWidth
 export default function Nav(){
     
     const {logout, currentUser} = useFire()
-    const [pageWidth, setPageWidth] = useState(750)
 
     const navStyle = {
         backgroundColor: '#060621',
