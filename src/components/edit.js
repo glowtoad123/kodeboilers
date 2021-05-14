@@ -113,7 +113,6 @@ export default function Edit() {
                   }}
             />
             <Languages set={selectLanguage} default={defaultLanguage} />
-            <br />
             <button type="submit" className="addCode" onClick={editSnippet}>Update Snippet</button>
         </div>}
         </>
