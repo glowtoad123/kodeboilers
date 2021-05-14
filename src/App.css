@@ -128,19 +128,19 @@ svg:active {
 }
 
 .CodeMirror-vscrollbar {
-  z-index: 0;
+  z-index: 3;
 }
 
 .CodeMirror-hscrollbar {
-  z-index: 0;
+  z-index: 3;
 }
 
 .CodeMirror-scrollbar-filler {
-  z-index: 0;
+  z-index: 3;
 }
 
 .CodeMirror-gutter-filler {
-  z-index: 0;
+  z-index: 3;
 }
 
 ::-webkit-scrollbar {
