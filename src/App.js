@@ -26,7 +26,7 @@ function App() {
         <div className="App">
           <Nav />
           <Switch>
-            <Route path="/broiler/:id" component={Snippet} />
+            <Route path="/snippet/:id" component={Snippet} />
             <Route path="/edit/:id" component={Edit} />
             <Route exact path="/" component={Collection} />
             <Route path="/enter" component={Enter} />
