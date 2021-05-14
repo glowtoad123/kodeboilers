@@ -9,26 +9,8 @@ export default function Nav(){
     
     const {logout, currentUser} = useFire()
 
-    const navStyle = {
-        backgroundColor: '#060621',
-        padding: '15px',
-        border: 'none',
-        borderRadius: '12px',
-        position: 'fixed',
-        top: !currentUser ? '35%' : window.innerWidth < 750 ? "auto" : '20%',
-        right: window.innerWidth < 750 ? 'auto' : '5px',
-        left: window.innerWidth < 750 && '30%',
-        bottom: window.innerWidth < 750 ? '0' : 'auto',
-        boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.25)',
-        zIndex: '3',
-        display: 'flex',
-        flexDirection: window.innerWidth < 750 ? 'row' : "column",
-    }
-
     const navButtonStyle = {
         margin: "auto",
-        marginTop: "15px",
-        marginBottom: "15px"
     }
 //test
 
@@ -60,7 +42,7 @@ console.log("pageWidth", window.innerWidth)
     }
 
     return(
-        <nav onClick={() => console.log("window.innerWidth", window.innerWidth)} style={navStyle}>
+        <nav onClick={() => console.log("window.innerWidth", window.innerWidth)} className="nav">
             <Link to="/">
                 <svg style={navButtonStyle} width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
@@ -77,9 +59,11 @@ console.log("pageWidth", window.innerWidth)
                     <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                 </svg>
             </Link></>}
+            <a href>
                 <svg style={navButtonStyle} onClick={handleLogout} width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-door-closed-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path onClick={handleLogout} fill-rule="evenodd" d="M4 1a1 1 0 0 0-1 1v13H1.5a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2a1 1 0 0 0-1-1H4zm2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                 </svg>
+            </a>
         </nav>
     )
 }

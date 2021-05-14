@@ -1,5 +1,7 @@
 import React from 'react'
 import './App.css';
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/material.css'
 import Nav from './components/nav'
 import {Fire} from './services/fire'
 import {

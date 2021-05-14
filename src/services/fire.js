@@ -30,13 +30,14 @@ export function Fire({ children }) {
        return auth.signOut()
     }
 
-    function submitBroiler(title, code, uid){
+    function submitBroiler(title, code, uid, language){
       const db = firebase.firestore()
 
       db.collection("broilers").add({
         title: title,
         code: code,
-        user: uid
+        user: uid,
+        language: language,
       })
     }
 
@@ -55,12 +56,13 @@ export function Fire({ children }) {
       return db.collection('broilers').doc(id).get()
     }
 
-    function updateBroiler(id, title, code) {
+    function updateBroiler(id, title, code, language) {
       const db = firebase.firestore()
 
       return db.collection('broilers').doc(id).update({
         title: title,
-        code: code
+        code: code,
+        language: language,
       }).then(() => console.log("it works")).catch(err => console.log(err))
     }
 

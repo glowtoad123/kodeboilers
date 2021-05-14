@@ -28,6 +28,43 @@
   color: #61dafb;
 }
 
+.nav {
+  background-color: #060621;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  position: fixed;
+  top: auto;
+  right: 0;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  height: -webkit-fill-available;
+  height: -moz-available;
+}
+
+.select {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  margin: 0 0 0px 0;
+  background-color: #0F111A;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  color: #601221;
+  border: none;
+}
+
+.select:hover {
+  background-color: #0B0C13;
+}
+
+.option {
+  padding: 10px
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -73,12 +110,44 @@ svg:active {
   border: none;
 }
 
+.editor>div {
+  width: -webkit-fill-available;
+  width: -moz-available;
+}
+.react-monaco-editor-container>div>div {
+  width: -webkit-fill-available;
+  width: -moz-available;
+}
+
+.monaco-editor.no-user-select.showUnused.showDeprecated.vs-dark {
+  width: -webkit-fill-available;
+  width: -moz-available;
+}
+
+.CodeMirror-vscrollbar {
+  z-index: 0;
+}
+
+.CodeMirror-hscrollbar {
+  z-index: 0;
+}
+
+.CodeMirror-scrollbar-filler {
+  z-index: 0;
+}
+
+.CodeMirror-gutter-filler {
+  z-index: 0;
+}
+
 ::-webkit-scrollbar {
   background-color: #263238;
+  z-index: 0;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #f06262;
+  z-index: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -90,8 +159,10 @@ svg:active {
 }
 
 .addCode {
-  background-color:#627b88;
-  color: white;
+  background-color: #030404;
+  color: #601221;
+  font-weight: bolder;
+  font-size: 3vw;
   margin-bottom: 0;
   width: -webkit-fill-available;
   width: -moz-available;
@@ -99,6 +170,13 @@ svg:active {
   border-radius: 0 0 12px 12px;
   margin-top: 0;
   padding: 10px;
+  cursor: pointer;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 500ms;
+}
+
+.addCode:hover {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .displayedBroiler {
@@ -110,6 +188,7 @@ svg:active {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 50px 10px 10px 10px;
   display: inline-block;
+  transition: box-shadow 500ms;
 }
 
 .displayedBroiler:hover {
@@ -121,19 +200,24 @@ svg:active {
   border-radius: 12px 12px 0 0;
   margin-bottom: 0;
   margin-top: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .displayedBroilerTitle:hover {
     box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.25);
+    white-space: normal;
+    text-overflow: initial;
 }
 
 a {
   text-decoration: none;
   color: white;
-}
-
-a:hover {
-  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.25);
+  height: -webkit-fill-available;
+  height: -moz-available;
+  width: -webkit-fill-available;
+  width: -moz-available;
 }
 
 .edit {
@@ -163,6 +247,16 @@ a:hover {
     border-radius: 12px 12px 0 0;
     margin-bottom: 0;
     margin-top: 0;
+  }
+  .nav {
+    flex-direction: row;
+    right: auto;
+    top: 0;
+    left: auto;
+    width: -webkit-fill-available;
+    height: max-content;
+    position: sticky;
+    z-index: 6;
   }
 }
 
