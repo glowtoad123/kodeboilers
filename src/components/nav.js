@@ -64,6 +64,13 @@ console.log("pageWidth", window.innerWidth)
                     <path onClick={handleLogout} fill-rule="evenodd" d="M4 1a1 1 0 0 0-1 1v13H1.5a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2a1 1 0 0 0-1-1H4zm2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                 </svg>
             </a>
+            <Link to="/about">
+                <svg style={navButtonStyle} width="43.314" height="43.314" version="1.1" viewBox="0 0 11.46 11.46" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                 <g transform="translate(1.5131 1.4803)">
+                  <path transform="matrix(.26458 0 0 .26458 -.01644 .01644)" d="m0 0c-7.5425 7.5425-7.5425 24.458 0 32s24.458 7.5425 32 0 7.5425-24.458 0-32-24.458-7.5425-32 0zm13.93 1.3613h4.1406v3.8086h-4.1406zm0.23437 7.4609h3.6719v21.816h-3.6719z"/>
+                 </g>
+                </svg>
+            </Link>
         </nav>
     )
 }

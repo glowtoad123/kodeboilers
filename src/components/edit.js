@@ -65,11 +65,11 @@ export default function Edit() {
     const [defaultLanguage, setDefaultLanguage] = useState("")
 
     const {id} = useParams()
-    const {findBroiler, updateBroiler, currentUser} = useFire()
+    const {findSnippet, updateSnippet, currentUser} = useFire()
 
     const history = useHistory()
 
-    title.length === 0 && findBroiler(id).then(doc => {
+    title.length === 0 && findSnippet(id).then(doc => {
             setTitle(doc.data().title)
             setCode(doc.data().code)
             setUser(doc.data().user)
@@ -81,8 +81,8 @@ export default function Edit() {
 
     console.log(title)
 
-    function editBroiler(){
-        updateBroiler(id, title, code, selectedLanguage)
+    function editSnippet(){
+        updateSnippet(id, title, code, selectedLanguage)
         history.push("/")
     }
 
@@ -96,7 +96,7 @@ export default function Edit() {
         <>
         {currentUser && user && currentUser.uid !== user && <LinearProgress />}
         {currentUser && user && currentUser.uid === user && <div style={{width: '85%', margin: 'auto', boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.25)", borderRadius: "13px"}}>
-            <input type="text" className="title" value={title} placeholder="loading Broiler"/>
+            <input type="text" className="title" value={title} placeholder="loading Snippet"/>
             <CodeMirror
                 onBeforeChange={(editor, data, value) => {
                     setCode(value);
@@ -114,7 +114,7 @@ export default function Edit() {
             />
             <Languages set={selectLanguage} default={defaultLanguage} />
             <br />
-            <button type="submit" className="addCode" onClick={editBroiler}>Update Broiler</button>
+            <button type="submit" className="addCode" onClick={editSnippet}>Update Snippet</button>
         </div>}
         </>
     )

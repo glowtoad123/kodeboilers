@@ -1,7 +1,7 @@
 import React from 'react'
-import './App.css';
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/material.css'
+import './App.css';
 import Nav from './components/nav'
 import {Fire} from './services/fire'
 import {
@@ -12,10 +12,11 @@ import {
 import Enter from './enter'
 import Create from './create'
 import Collection from './components/collection';
-import Broiler from './components/broiler'
+import Snippet from './components/broiler'
 import Edit from './components/edit'
 import Forgot from './components/forgot';
 import Account from './components/account';
+import Info from './info';
 
 function App() {
 
@@ -25,13 +26,14 @@ function App() {
         <div className="App">
           <Nav />
           <Switch>
-            <Route path="/broiler/:id" component={Broiler} />
+            <Route path="/broiler/:id" component={Snippet} />
             <Route path="/edit/:id" component={Edit} />
             <Route exact path="/" component={Collection} />
             <Route path="/enter" component={Enter} />
             <Route path="/create" component={Create} />
             <Route path="/forgot" component={Forgot} />
             <Route path="/account" component={Account} />
+            <Route path="/about" component={Info} />
           </Switch>
         </div>
       </Router>

@@ -30,7 +30,7 @@ export function Fire({ children }) {
        return auth.signOut()
     }
 
-    function submitBroiler(title, code, uid, language){
+    function SubmitSnippet(title, code, uid, language){
       const db = firebase.firestore()
 
       db.collection("broilers").add({
@@ -41,7 +41,7 @@ export function Fire({ children }) {
       })
     }
 
-    function displayBroilers(){
+    function displaySnippets(){
       const db = firebase.firestore()
       if(currentUser){
         return db.collection("broilers").where("user", '==', currentUser.uid)
@@ -50,13 +50,13 @@ export function Fire({ children }) {
       }
     }
 
-    function findBroiler(id) {
+    function findSnippet(id) {
       const db = firebase.firestore()
 
       return db.collection('broilers').doc(id).get()
     }
 
-    function updateBroiler(id, title, code, language) {
+    function updateSnippet(id, title, code, language) {
       const db = firebase.firestore()
 
       return db.collection('broilers').doc(id).update({
@@ -66,7 +66,7 @@ export function Fire({ children }) {
       }).then(() => console.log("it works")).catch(err => console.log(err))
     }
 
-    function deleteBroiler(id){
+    function deleteSnippet(id){
       const db = firebase.firestore()
 
       return db.collection('broilers').doc(id).delete().then(() => console.log("it works")).catch(err => console.log(err))
@@ -112,11 +112,11 @@ export function Fire({ children }) {
       checkAccount,
       submitAccount,
       logout,
-      submitBroiler,
-      displayBroilers,
-      findBroiler,
-      updateBroiler,
-      deleteBroiler,
+      SubmitSnippet,
+      displaySnippets,
+      findSnippet,
+      updateSnippet,
+      deleteSnippet,
       resetPassword,
       updateEmail,
       updatePassword,

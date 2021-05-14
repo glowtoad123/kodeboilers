@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 .App {
   text-align: center;
 }
@@ -179,7 +182,7 @@ svg:active {
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
 }
 
-.displayedBroiler {
+.displayedSnippet {
   width: 25%;
   background-color:#263238;
   color: white;
@@ -191,11 +194,11 @@ svg:active {
   transition: box-shadow 500ms;
 }
 
-.displayedBroiler:hover {
+.displayedSnippet:hover {
   box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.25);
 }
 
-.displayedBroilerTitle {
+.displayedSnippetTitle {
   background-color: #20261F;
   border-radius: 12px 12px 0 0;
   margin-bottom: 0;
@@ -205,7 +208,7 @@ svg:active {
   overflow: hidden;
 }
 
-.displayedBroilerTitle:hover {
+.displayedSnippetTitle:hover {
     box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.25);
     white-space: normal;
     text-overflow: initial;
@@ -227,7 +230,7 @@ a {
 }
 
 @media screen and (max-width: 1024px) {
-  .displayedBroiler {
+  .displayedSnippet {
     width: 95%;
     background-color:#263238;
     color: white;
@@ -238,11 +241,11 @@ a {
     display: inline-block;
   }
   
-  .displayedBroiler:hover {
+  .displayedSnippet:hover {
     box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.25);
   }
   
-  .displayedBroilerTitle {
+  .displayedSnippetTitle {
     background-color: #20261F;
     border-radius: 12px 12px 0 0;
     margin-bottom: 0;
@@ -282,4 +285,129 @@ a {
   margin-bottom: 50px;
   border: none;
   border-radius: 12px;
+}
+
+
+.titleContainer {
+  background-color: #263238;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  height: max-content;
+  flex-direction: row;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 135px;
+  margin-bottom: 40px;
+}
+
+.titlePic {
+  width: 30%;
+  height: 30%;
+  vertical-align: middle;
+}
+
+.titleTextContainer {
+  background: transparent;
+}
+
+.titleText {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight:bolder;
+  text-align: center;
+  color: #14B9B5;
+  vertical-align: middle;
+  margin: auto 1px;
+  margin-right: 0;
+  padding: 0;
+  font-size: 5vw;
+  background: rgb(0,195,155);
+  background: linear-gradient(90deg, rgb(6, 6, 33) 0%, rgb(96, 18, 33) 55%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.featureContainerContainer {
+  width: 85%;
+  margin: auto;
+}
+
+.featureContainer {
+  background-color: #263238;
+  /* width: 50%;
+  position: fixed;
+  left: 1px */
+  width: -webkit-fill-available;
+  width: -moz-available;
+  margin: auto;
+  border-radius: 10px 10px 0 0;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+}
+
+.featurePic {
+  width: 50%;
+  height: 50%;
+  margin: auto 5px 0 0;
+
+}
+
+.description {
+  margin:  auto 5px;
+  width: 90%;
+  color: #601221;
+  background: rgba(48, 60, 72, 0.5);
+  font-family: 'Roboto', sans-serif;
+  font-size: 3vw;
+  font-weight: bolder;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.enter {
+  cursor: pointer;
+  background-color: #030404;
+  color: #601221;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  border-radius: 0 0 6px 6px;
+  text-align: center;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  font-size: calc(1rem + 1.5vw);
+  border: none;
+  display: block;
+}
+
+.footerContainer {
+  background-color: #263238;
+  width: max-content;
+  margin: auto;
+  display: flex;
+  height: max-content;
+  flex-direction: row;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  margin-bottom: 40px;
+  padding: 10px;
+}
+
+.footerText {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight:bolder;
+  text-align: center;
+  color: #14B9B5;
+  vertical-align: middle;
+  margin: auto 1px;
+  margin-right: 0;
+  padding: 0;
+  font-size: 3vw;
+  background: rgb(0,195,155);
+  background: linear-gradient(90deg, rgb(6, 6, 33) 0%, rgb(96, 18, 33) 55%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
