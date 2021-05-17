@@ -218,9 +218,9 @@ a {
   text-decoration: none;
   color: white;
   height: -webkit-fill-available;
-  height: -moz-available;
+  height: 100%;
   width: -webkit-fill-available;
-  width: -moz-available;
+  width: 100%;
 }
 
 .edit {
